@@ -1,60 +1,98 @@
-# 🎮 Hangman Game Challenge
+# 📘 Assignment: Hangman Game Challenge
 
-Build the classic word-guessing game using Python strings, loops, and user input.
+## 🎯 Objective
 
-## Learning objectives
+Build a playable Hangman game in Python that lets a player guess letters to reveal a hidden word before running out of attempts. Focus on clean game state, user-friendly prompts, and solid input validation.
 
-- Practice working with strings, lists, and basic data structures.
+## 🎓 Learning objectives
+
+- Practice string and list manipulation in Python.
 - Use loops and conditionals to control game flow.
-- Read user input and validate it.
-- Apply random selection to choose game data.
-- Design simple game state and display updates to users.
+- Work with sets for efficient membership checking (guessed letters).
+- Read and validate user input.
+- Apply randomness to pick game data.
+- Design a simple, testable game state and display logic.
 
-## Prerequisites
+## ⏱ Estimated time
 
-- Basic familiarity with Python (variables, lists, strings, functions).
-- Python 3.x installed on your machine.
+45–90 minutes depending on experience.
 
-## Estimated time
+## ⚙️ Prerequisites
 
-About 45–90 minutes depending on experience.
+- Python 3.x installed
+- Basic familiarity with Python syntax (variables, lists, functions, conditionals, loops)
 
-## What you'll build
+## 📁 Files in this folder
 
-Create a Hangman game where players guess letters to reveal a hidden word before running out of attempts. The game should display the current progress (e.g., _ a _ _ m a n), show letters already guessed, and track remaining attempts.
+- `starter-code.py` — starter script to complete or extend
+- (optional) `data/words.txt` — a plain text word list (one word per line) if present
 
-**Skills practiced:** string manipulation, loops, conditionals, list/set operations, user input handling, random selection.
+---
 
-## Requirements (must-haves)
+## 📝 Tasks
 
-Your game must:
+### 🛠️ Task 1 — Implement the Hangman game (required)
 
-- Randomly select a word from a predefined list.
-- Prompt the player for single-letter guesses.
-- Show current progress with unguessed letters as underscores (e.g., _ _ a _ _ ).
-- Track and display letters the player has already guessed.
-- Limit the number of incorrect guesses and show remaining attempts.
-- End the game with a clear win or lose message.
+#### Description
 
-## How to run
+Complete `starter-code.py` (or build your own script) so a player can play a full round of Hangman from the terminal.
+
+#### Requirements
+
+Completed program should:
+
+- Randomly select a word from a predefined list (in-code list or `data/words.txt`).
+- Prompt the player for single-letter guesses and validate the input.
+- Display the current progress using underscores for unguessed letters (for example: `_ a _ _ m a n`).
+- Track and display letters already guessed (both correct and incorrect).
+- Limit incorrect guesses and show the number of remaining attempts.
+- End with a clear message when the player wins (all letters revealed) or loses (no remaining attempts).
+
+
+### 🛠️ Task 2 — (Optional) Add polish and improvements
+
+#### Description
+
+Add features that improve user experience or make the game more robust.
+
+#### Suggestions
+
+- Allow guessing the entire word as an alternative action.
+- Add difficulty levels that adjust allowed attempts and/or filter the word list by length.
+- Draw a simple ASCII-art hangman that progresses with each incorrect guess.
+- Load a larger word list from `data/words.txt` and filter by difficulty.
+- Add unit tests for helper functions (for example: display builder and input validator).
+
+---
+
+## ▶️ How to run
 
 1. Open a terminal and navigate to this assignment folder:
 
-   cd assignments/games-in-python
+```bash
+cd assignments/games-in-python
+```
 
 2. Run the starter script with Python 3:
 
-   python3 starter-code.py
+```bash
+python3 starter-code.py
+```
 
-If your environment uses `python` for Python 3, use `python starter-code.py` instead.
+If your environment uses `python` for Python 3, run `python starter-code.py` instead.
 
-## Starter tips and hints
+---
 
-- Keep a list of words in your program (or load from `data/words.txt` if provided).
-- Use a set to track guessed letters and to check membership quickly.
-- Build a helper function that returns the display string (with underscores) given the secret word and guessed letters.
-- Validate input: accept only single alphabetical characters and ignore repeated guesses.
-- Update the number of remaining attempts only for incorrect, new guesses.
+## 💡 Starter tips and hints
+
+- Keep a list of candidate words inside the script or load from `data/words.txt` if available.
+- Use a set for guessed letters to allow fast membership checks and to avoid duplicates.
+- Create a helper function to build the display string (replace unguessed letters with `_`).
+- Validate input so only single alphabetical characters are accepted; ignore repeated guesses.
+- Decrease remaining attempts only for incorrect *new* guesses.
+- Print friendly, informative prompts and the game state after each guess.
+
+---
 
 ## Example interaction
 
@@ -64,30 +102,31 @@ _ _ _ _ _
 
 Player inputs: a
 
-A correct guess updates the display if 'a' is in the word. Incorrect guesses reduce remaining attempts and add the letter to "guessed".
+If 'a' is in the word, the display updates. If the guess is incorrect and new, remaining attempts decrease and the guessed letter list updates.
 
-## Evaluation / success criteria
+---
 
-- Program runs without crashing and follows the requirements above. (Pass)
-- Correct handling of repeated letters and repeated guesses. (Pass)
-- Clear, user-friendly prompts and messages. (Pass)
+## ✅ Evaluation / success criteria
 
-## Extensions (optional)
+- Program runs without crashing and meets the required behavior in Task 1. (Pass)
+- Repeated letters and repeated guesses are handled correctly. (Pass)
+- Prompts and messages are clear and student-friendly. (Pass)
 
-Try one or more of these to deepen the challenge:
+---
 
-- Add difficulty levels that change the number of attempts or the word list.
-- Implement a simple ASCII-art hangman that draws more of the figure on each incorrect guess.
-- Allow players to guess the whole word.
-- Load a larger word list from a text file and filter by word length for difficulty.
-- Add unit tests for the helper functions (display builder, guess validation).
+## ✨ Extensions (optional)
 
-## Help and resources
+- Add difficulty levels and filter the word list by length.
+- Implement ASCII-art hangman that draws progressively with wrong guesses.
+- Allow full-word guesses and give appropriate feedback.
+- Add unit tests for core helper functions: display builder and input validator.
 
-If you get stuck, try:
+---
 
-- Printing intermediate values (secret word, guessed letters, attempts left) to debug game state.
-- Writing small helper functions and testing them individually.
-- Reviewing Python docs for `random.choice` and basic string/list methods.
+## 📚 Help and resources
 
-Good luck — have fun building the game! Keep the user experience friendly and clear for other students trying this assignment.
+- Python `random.choice` for selecting a random word.
+- Use `set` and string/list methods for efficient logic.
+- Print intermediate state values while debugging (secret word, guessed letters, attempts left).
+
+Good luck — have fun building the game! Keep the experience friendly and clear for other students who will use this assignment.
