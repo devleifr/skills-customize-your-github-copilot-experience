@@ -58,6 +58,25 @@
           "type": "csv"
         }
       ]
+    },
+    {
+      "id": "fastapi-rest-apis",
+      "title": "Building REST APIs with FastAPI",
+      "description": "Create a small REST API using FastAPI with CRUD endpoints and Pydantic validation.",
+      "path": "assignments/fastapi-rest-apis",
+      "dueDate": "2025-11-03",
+      "attachments": [
+        {
+          "name": "Starter App",
+          "file": "main.py",
+          "type": "python"
+        },
+        {
+          "name": "Dependencies",
+          "file": "requirements.txt",
+          "type": "text"
+        }
+      ]
     }
   ]
 }

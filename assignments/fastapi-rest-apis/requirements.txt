@@ -1,0 +1,106 @@
+fastapi
+uvicorn[standard]
+# 📘 Assignment: Building REST APIs with FastAPI
+
+## 🎯 Objective
+
+Build a simple, well-documented REST API using the FastAPI framework. Students will design resource models, implement CRUD endpoints, validate requests with Pydantic, and run the API locally with Uvicorn.
+
+## 🎓 Learning objectives
+
+- Learn the basics of FastAPI and Pydantic models
+- Design and implement RESTful endpoints (GET, POST, PUT, DELETE)
+- Validate request and response data with Pydantic
+- Run and test the API locally with Uvicorn
+- Understand in-memory state and how to wire a simple persistence layer (optional)
+
+## ⏱ Estimated time
+
+60–120 minutes depending on experience.
+
+## ⚙️ Prerequisites
+
+- Python 3.8+ installed
+- Basic familiarity with Python and HTTP methods
+
+## 📁 Files in this folder
+
+- `main.py` — starter FastAPI application
+- `requirements.txt` — dependencies for the project
+
+---
+
+## 📝 Tasks
+
+### 🛠️ Task 1 — Implement the REST API (required)
+
+#### Description
+
+Complete and extend `main.py` so the API supports full CRUD for a simple resource ("items"). Use Pydantic models to validate incoming data and return clear HTTP status codes.
+
+#### Requirements
+
+Completed project should:
+
+- Expose endpoints: GET /items, GET /items/{id}, POST /items, PUT /items/{id}, DELETE /items/{id}
+- Use Pydantic models for request validation and response schemas
+- Store data in a simple in-memory store (dictionary/list) for the exercise
+- Return appropriate status codes (200, 201, 404, 400, etc.) and helpful JSON error messages
+- Provide clear, student-friendly prompts/messages in the README on how to run the server
+
+
+### 🛠️ Task 2 — (Optional) Improvements
+
+#### Description
+
+Add features that make the API more production-like or add polish.
+
+#### Suggestions
+
+- Add basic OpenAPI metadata and examples so the interactive docs are useful
+- Add simple authentication (API key) for write operations
+- Persist data to a lightweight database (SQLite) using SQLModel or SQLAlchemy
+- Add unit tests for endpoint behaviors using TestClient from FastAPI
+- Add Dockerfile for containerized runs
+
+---
+
+## ▶️ How to run
+
+1. Create a virtual environment and install dependencies:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+2. Run the app with Uvicorn (from this folder):
+
+```bash
+uvicorn main:app --reload
+```
+
+3. Open the interactive API docs at: http://127.0.0.1:8000/docs
+
+
+## ✅ Evaluation / success criteria
+
+- Server runs and the required endpoints work (Pass)
+- Validation errors return informative messages (Pass)
+- API docs are available at `/docs` (Pass)
+
+
+## ✨ Extensions (optional)
+
+- Add authentication and role-based access to endpoints
+- Add persistent storage and migrations
+- Add more comprehensive tests and CI workflow
+
+
+## 📚 Help and resources
+
+- FastAPI documentation: https://fastapi.tiangolo.com/
+- Pydantic models: https://pydantic-docs.helpmanual.io/
+
+Good luck — build something you can reuse in future projects!
